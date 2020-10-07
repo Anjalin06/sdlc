@@ -1,0 +1,32 @@
+name: C/C++ CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+       - name: Setup .NET Core 
+         uses: actions/setup-dotnet@v1.7.2
+         run : npm install
+          with:
+  
+    dotnet-version: 2.2.108
+    name: 
+  
+    -name : build with dotnet 
+     working directory :./Mini Project in C Bank Management System
+     - name:configure
+      run:./configure
+    - name: make
+      run: make
+    - name: make check
+      run: make check
+    - name: make distcheck
+      run: make distcheck
